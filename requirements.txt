@@ -1,0 +1,5 @@
+mediapipe~=0.9.1.0
+numpy~=1.24.2
+tensorflow~=2.11.0
+opencv-python~=4.7.0.72
+keyboard~=0.13.5

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <div id="game">
+        <form>
+
+<!--            <input type="radio" id="rock-rock" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="rock-paper" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="rock-scissors" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="paper-rock" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="paper-paper" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="paper-scissors" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="scissors-rock" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="scissors-paper" name="rock-paper-scissors">-->
+<!--            <input type="radio" id="scissors-scissors" name="rock-paper-scissors">-->
+
+            <div>
+                <h1>VisionRPS</h1>
+                <div id="hands">
+                    <div class="hand" id="computer-hand">
+                        <div class="fist"></div>
+                        <div class="finger finger-1"></div>
+                        <div class="finger finger-2"></div>
+                        <div class="finger finger-3"></div>
+                        <div class="finger finger-4"></div>
+                        <div class="thumb"></div>
+                        <div class="arm"></div>
+                    </div>
+
+                    <div class="hand" id="user-hand">
+                        <div class="fist"></div>
+                        <div class="finger finger-1"></div>
+                        <div class="finger finger-2"></div>
+                        <div class="finger finger-3"></div>
+                        <div class="finger finger-4"></div>
+                        <div class="thumb"></div>
+                        <div class="arm"></div>
+                    </div>
+
+                    <div id="icons">
+                        <div>
+                            <label for="rock-rock">✊</label>
+                            <label for="paper-rock">✊</label>
+                            <label for="scissors-rock">✊</label>
+                        </div>
+                        <div>
+                            <label for="rock-paper">🖐️</label>
+                            <label for="paper-paper">🖐️</label>
+                            <label for="scissors-paper">🖐️</label>
+                        </div>
+                        <div>
+                            <label for="rock-scissors">✌</label>
+                            <label for="paper-scissors">✌</label>
+                            <label for="scissors-scissors">✌</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="message">
+                <h2></h2>
+                <input type="reset" value="Refresh Round"/>
+            </div>
+
+        </form>
+    </div>
+    <div id="vision-rps">
+        <video class="input_video" style="display: none"></video>
+        <canvas class="output_canvas" width="640px" height="360px"></canvas>
+        <div id="output" style="font-size: 100px"></div>
+    </div>
+
+</div>
+<script src="js/model.js" type="module"></script>
+</body>
+</html>
